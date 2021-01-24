@@ -13,9 +13,13 @@ class LoginViewController: UIViewController {
     
     let profileController = ProfileController.shared
     
+    @IBOutlet weak var signInButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        signInButton.layer.cornerRadius = 28
+
         NotificationCenter.default.addObserver(forName: .oktaAuthenticationSuccessful,
                                                object: nil,
                                                queue: .main,
