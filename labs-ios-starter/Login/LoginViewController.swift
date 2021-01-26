@@ -14,11 +14,17 @@ class LoginViewController: UIViewController {
     let profileController = ProfileController.shared
     
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var usernameTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usernameTextField.layer.cornerRadius = 28
         signInButton.layer.cornerRadius = 28
+        signInButton.layer.shadowOpacity = 0.3
+        signInButton.layer.shadowRadius = 2.0
+        signInButton.layer.shadowColor = UIColor.darkGray.cgColor
+        signInButton.layer.shadowOffset = CGSize(width: 8, height: 8)
 
         NotificationCenter.default.addObserver(forName: .oktaAuthenticationSuccessful,
                                                object: nil,

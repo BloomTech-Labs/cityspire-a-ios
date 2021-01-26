@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="671.01449275362324" y="83.705357142857139"/>
         </scene>
-        <!--ProfileViewer-->
+        <!--Login View Controller-->
         <scene sceneID="6M8-Hn-aJP">
             <objects>
                 <viewController id="4a7-cC-Xlp" customClass="LoginViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,16 +36,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBkgd" translatesAutoresizingMaskIntoConstraints="NO" id="Uyu-lE-nIR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
-                                <rect key="frame" x="57" y="471" width="300" height="60"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <rect key="frame" x="57" y="475" width="300" height="60"/>
+                                <color key="backgroundColor" red="0.70712363720000004" green="0.75297439099999997" blue="0.79070281980000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="7OW-p7-96J"/>
                                     <constraint firstAttribute="width" secondItem="CQk-Xf-had" secondAttribute="height" multiplier="5:1" id="IoF-oR-PBH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sign in with Okta">
+                                <state key="normal" title="Okta Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -52,17 +56,53 @@
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9a-5R-4Xh">
+                                <rect key="frame" x="20" y="160" width="204" height="74"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="62"/>
+                                <color key="textColor" red="0.81750518080000001" green="0.71768838170000004" blue="0.61556434630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="           Enter Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uj1-g4-qRj">
+                                <rect key="frame" x="57" y="293" width="300" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="fZC-IX-uXp"/>
+                                    <constraint firstAttribute="width" secondItem="Uj1-g4-qRj" secondAttribute="height" multiplier="5:1" id="uJT-in-Ebb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L8b-Cd-s2d">
+                                <rect key="frame" x="60" y="302" width="39" height="42"/>
+                                <color key="tintColor" red="0.81750518080000001" green="0.71768838170000004" blue="0.61556434630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R8l-LV-vJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Uj1-g4-qRj" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerX" id="1Bb-jx-jij"/>
+                            <constraint firstItem="T9a-5R-4Xh" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" constant="20" id="1sE-r4-9A9"/>
                             <constraint firstItem="CQk-Xf-had" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerXWithinMargins" id="5R1-zz-EZZ"/>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerY" secondItem="INU-fS-Snd" secondAttribute="centerYWithinMargins" id="ADM-g9-0Ut"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerY" secondItem="INU-fS-Snd" secondAttribute="centerYWithinMargins" constant="4" id="ADM-g9-0Ut"/>
+                            <constraint firstItem="Uyu-lE-nIR" firstAttribute="top" secondItem="INU-fS-Snd" secondAttribute="top" id="IIS-5C-W7e"/>
+                            <constraint firstItem="L8b-Cd-s2d" firstAttribute="centerY" secondItem="Uj1-g4-qRj" secondAttribute="centerY" id="Zvb-PK-F5T"/>
+                            <constraint firstItem="L8b-Cd-s2d" firstAttribute="top" secondItem="Uj1-g4-qRj" secondAttribute="bottom" constant="-50" id="eeP-4F-Ssp"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="Uyu-lE-nIR" secondAttribute="trailing" id="luE-cy-bQu"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="bottom" secondItem="Uyu-lE-nIR" secondAttribute="bottom" id="m28-Nd-gy2"/>
+                            <constraint firstItem="Uj1-g4-qRj" firstAttribute="top" secondItem="T9a-5R-4Xh" secondAttribute="bottom" constant="59" id="nqz-e7-aaA"/>
+                            <constraint firstItem="T9a-5R-4Xh" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="20" id="oLb-i2-a8s"/>
+                            <constraint firstItem="L8b-Cd-s2d" firstAttribute="leading" secondItem="Uj1-g4-qRj" secondAttribute="leading" constant="3" id="tUc-sP-ro6"/>
+                            <constraint firstItem="Uyu-lE-nIR" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" id="wmR-lY-Qgj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ProfileViewer" id="fm5-ES-PwH"/>
+                    <navigationItem key="navigationItem" id="fm5-ES-PwH">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="ioq-gr-8Xt">
+                            <imageReference key="image" image="line.horizontal.3" catalog="system" symbolScale="large"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="signInButton" destination="CQk-Xf-had" id="KK2-7X-jWi"/>
+                        <outlet property="usernameTextField" destination="Uj1-g4-qRj" id="ctS-we-0TF"/>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
                         <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
                     </connections>
@@ -164,11 +204,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoginBkgd" width="187.5" height="406"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
