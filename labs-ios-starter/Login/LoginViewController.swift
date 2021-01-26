@@ -15,11 +15,13 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         usernameTextField.layer.cornerRadius = 28
+        passwordTextField.layer.cornerRadius = 28
         signInButton.layer.cornerRadius = 28
         signInButton.layer.shadowOpacity = 0.3
         signInButton.layer.shadowRadius = 2.0
