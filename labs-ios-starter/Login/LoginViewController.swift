@@ -20,13 +20,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        usernameTextField.layer.cornerRadius = 28
-        passwordTextField.layer.cornerRadius = 28
-        signInButton.layer.cornerRadius = 28
-        signInButton.layer.shadowOpacity = 0.3
-        signInButton.layer.shadowRadius = 2.0
-        signInButton.layer.shadowColor = UIColor.darkGray.cgColor
-        signInButton.layer.shadowOffset = CGSize(width: 8, height: 8)
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+
+        setTextFieldAttributes()
 
         NotificationCenter.default.addObserver(forName: .oktaAuthenticationSuccessful,
                                                object: nil,
@@ -106,5 +103,19 @@ class LoginViewController: UIViewController {
 extension LoginViewController: AddProfileDelegate {
     func profileWasAdded() {
         checkForExistingProfile()
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+        textField.becomeFirstResponder()
+
+        let cursorValue = 10
+
+        if let newPosition = textField.position(from: textField.beginningOfDocument, offset: cursorValue) {
+
+            textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
+        }
     }
 }
