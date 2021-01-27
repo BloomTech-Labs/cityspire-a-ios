@@ -76,6 +76,20 @@ class LoginViewController: UIViewController {
             }
         }
     }
+
+    private func setTextFieldAttributes() {
+        usernameTextField.layer.cornerRadius = 28
+        usernameTextField.clipsToBounds = true
+
+        passwordTextField.layer.cornerRadius = 28
+        passwordTextField.clipsToBounds = true
+
+        signInButton.layer.cornerRadius = 28
+        signInButton.layer.shadowOpacity = 0.3
+        signInButton.layer.shadowRadius = 2.0
+        signInButton.layer.shadowColor = UIColor.darkGray.cgColor
+        signInButton.layer.shadowOffset = CGSize(width: 8, height: 8)
+    }
     
     // MARK: - Navigation
     
