@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -76,11 +75,7 @@
                             <constraint firstItem="Uyu-lE-nIR" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" id="wmR-lY-Qgj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fm5-ES-PwH">
-                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="ioq-gr-8Xt">
-                            <imageReference key="image" image="line.horizontal.3" catalog="system" symbolScale="large"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="fm5-ES-PwH"/>
                     <connections>
                         <outlet property="signInButton" destination="CQk-Xf-had" id="KK2-7X-jWi"/>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
@@ -185,7 +180,6 @@
     </scenes>
     <resources>
         <image name="LoginBkgd" width="187.5" height="406"/>
-        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
