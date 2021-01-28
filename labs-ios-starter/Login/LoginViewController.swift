@@ -13,9 +13,13 @@ class LoginViewController: UIViewController {
     
     let profileController = ProfileController.shared
     
+    @IBOutlet weak var signInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        setTextFieldAttributes()
+
         NotificationCenter.default.addObserver(forName: .oktaAuthenticationSuccessful,
                                                object: nil,
                                                queue: .main,
@@ -63,6 +67,15 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "ModalAddProfile", sender: nil)
             }
         }
+    }
+
+    private func setTextFieldAttributes() {
+
+        signInButton.layer.cornerRadius = 28
+        signInButton.layer.shadowOpacity = 0.3
+        signInButton.layer.shadowRadius = 2.0
+        signInButton.layer.shadowColor = UIColor.darkGray.cgColor
+        signInButton.layer.shadowOffset = CGSize(width: 8, height: 8)
     }
     
     // MARK: - Navigation
