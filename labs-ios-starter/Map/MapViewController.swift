@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        layoutTrackingButton()
     }
     
     // MARK: - Helper Methods
@@ -33,6 +34,18 @@ class MapViewController: UIViewController {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
     }
+    
+    private func layoutTrackingButton() {
+        userLocationButton = MKUserTrackingButton(mapView: mapView)
+        userLocationButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(userLocationButton)
+        
+        NSLayoutConstraint.activate([
+            userLocationButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 20),
+            mapView.bottomAnchor.constraint(equalTo: userLocationButton.bottomAnchor, constant: 40)
+            
+        ])
+    }
 }
 
 // MARK: - Extension/Delegate Methods
@@ -40,7 +53,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first{
             manager.stopUpdatingLocation()
-            zoomToUserLocation(location)
+//            zoomToUserLocation(location)
         }
     }
 }
