@@ -14,14 +14,9 @@ class LoginViewController: UIViewController {
     let profileController = ProfileController.shared
     
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
 
         setTextFieldAttributes()
 
@@ -75,11 +70,6 @@ class LoginViewController: UIViewController {
     }
 
     private func setTextFieldAttributes() {
-        usernameTextField.layer.cornerRadius = 28
-        usernameTextField.clipsToBounds = true
-
-        passwordTextField.layer.cornerRadius = 28
-        passwordTextField.clipsToBounds = true
 
         signInButton.layer.cornerRadius = 28
         signInButton.layer.shadowOpacity = 0.3
@@ -103,19 +93,5 @@ class LoginViewController: UIViewController {
 extension LoginViewController: AddProfileDelegate {
     func profileWasAdded() {
         checkForExistingProfile()
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-
-        textField.becomeFirstResponder()
-
-        let cursorValue = 10
-
-        if let newPosition = textField.position(from: textField.beginningOfDocument, offset: cursorValue) {
-
-            textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
-        }
     }
 }
