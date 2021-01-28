@@ -34,7 +34,11 @@ class MapViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func searchButtonTapped(_ sender: Any) {
-        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search for City"
+        searchController.hidesNavigationBarDuringPresentation = false
+        present(searchController, animated: true, completion: nil)
     }
     
     
