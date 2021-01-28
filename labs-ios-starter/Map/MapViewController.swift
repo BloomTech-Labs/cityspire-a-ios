@@ -16,19 +16,21 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
 
+    // MARK: - Properties
+    var userLocationButton: MKUserTrackingButton!
+    let manager = CLLocationManager()
+
+
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Helper Methods
+    private func getUserLocation(){
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.startUpdatingLocation()
     }
-    */
-
 }
