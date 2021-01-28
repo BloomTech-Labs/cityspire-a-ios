@@ -34,3 +34,13 @@ class MapViewController: UIViewController {
         manager.startUpdatingLocation()
     }
 }
+
+// MARK: - Extension/Delegate Methods
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first{
+            manager.stopUpdatingLocation()
+            zoomToUserLocation(location)
+        }
+    }
+}
