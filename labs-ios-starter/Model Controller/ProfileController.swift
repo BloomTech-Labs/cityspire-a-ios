@@ -20,7 +20,7 @@ class ProfileController {
     private(set) var authenticatedUserProfile: Profile?
     private(set) var profiles: [Profile] = []
     
-    private let baseURL = URL(string: "https://cityspire-a-be.herokuapp.com/")! // https://labs-api-starter.herokuapp.com/
+    private let baseURL = URL(string: "https://cityspire-a-be.herokuapp.com/")!
     
     private init() {
         NotificationCenter.default.addObserver(self,
