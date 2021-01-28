@@ -32,6 +32,12 @@ class MapViewController: UIViewController {
         getUserLocation()
     }
     
+    // MARK: - IBActions
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        
+    }
+    
+    
     // MARK: - Helper Methods
     private func getUserLocation(){
         manager.delegate = self
