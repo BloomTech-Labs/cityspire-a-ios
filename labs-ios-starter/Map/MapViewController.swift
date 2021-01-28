@@ -27,6 +27,11 @@ class MapViewController: UIViewController {
         layoutTrackingButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getUserLocation()
+    }
+    
     // MARK: - Helper Methods
     private func getUserLocation(){
         manager.delegate = self
@@ -51,9 +56,8 @@ class MapViewController: UIViewController {
 // MARK: - Extension/Delegate Methods
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first{
+        if let _ = locations.first{
             manager.stopUpdatingLocation()
-//            zoomToUserLocation(location)
         }
     }
 }
