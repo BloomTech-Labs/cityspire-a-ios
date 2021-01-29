@@ -30,7 +30,13 @@
                             <constraint firstItem="6Lz-RX-Djo" firstAttribute="bottom" secondItem="m23-5y-zgA" secondAttribute="bottom" id="g7x-UW-CJF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FWP-Qh-7oh"/>
+                    <navigationItem key="navigationItem" id="FWP-Qh-7oh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ov8-RR-MCR">
+                            <connections>
+                                <action selector="searchButtonTapped:" destination="kev-8t-EGe" id="abR-lR-ChH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="m23-5y-zgA" id="H6D-TQ-ifz"/>
                     </connections>
