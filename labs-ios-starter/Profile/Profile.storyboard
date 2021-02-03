@@ -12,7 +12,7 @@
         <!--My Profile-->
         <scene sceneID="cTF-vO-Dxa">
             <objects>
-                <viewController id="McU-dj-svX" sceneMemberID="viewController">
+                <viewController id="McU-dj-svX" customClass="MyProfileViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bji-1o-H3b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,6 +64,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="Lhw-5c-RkO"/>
+                    <connections>
+                        <outlet property="tableView" destination="Tvk-40-TaO" id="SYu-zh-zlA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deT-yH-iho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
