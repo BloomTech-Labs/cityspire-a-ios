@@ -31,10 +31,15 @@ class MyProfileViewController: UIViewController {
 // MARK: - Extensions
 extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        // MARK: TODO
+        // Update this with correct number of rows
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") else { return UITableViewCell()}
+        // Test Cell
+        cell.textLabel?.text = "Location"
+        return cell
     }
 }
