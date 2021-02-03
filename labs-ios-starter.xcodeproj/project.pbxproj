@@ -58,6 +58,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B119EEA25CA40B70074CFDB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		0BC516EE25C26A2900FA5A64 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +107,7 @@
 				46BEB4EC24C98EBB00FE0CD1 /* Model Controller */,
 				46BEB4EF24C98ED900FE0CD1 /* Login */,
 				0BC516EE25C26A2900FA5A64 /* Map */,
+				0B119EEA25CA40B70074CFDB /* Profile */,
 				46BEB4EA24C98EA300FE0CD1 /* Helpers */,
 				465DAA2724BD0BC100D94C24 /* App Lifecycle */,
 				466C427C249A8749007D033E /* Assets.xcassets */,

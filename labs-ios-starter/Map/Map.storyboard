@@ -17,17 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m23-5y-zgA">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m23-5y-zgA">
+                                <rect key="frame" x="-6" y="0.0" width="414" height="896"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLy-Ya-Sje">
+                                <rect key="frame" x="338" y="111" width="56" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Jf4-Df-pjW"/>
+                                    <constraint firstAttribute="height" constant="51" id="QTz-9l-jfI"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="blank avatar"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Lz-RX-Djo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xLy-Ya-Sje" firstAttribute="top" secondItem="6Lz-RX-Djo" secondAttribute="top" constant="23" id="7sg-s0-rs9"/>
                             <constraint firstItem="m23-5y-zgA" firstAttribute="trailing" secondItem="6Lz-RX-Djo" secondAttribute="trailing" id="Q3D-sC-dkw"/>
                             <constraint firstItem="m23-5y-zgA" firstAttribute="leading" secondItem="6Lz-RX-Djo" secondAttribute="leading" id="Ukf-Dm-kGX"/>
                             <constraint firstItem="m23-5y-zgA" firstAttribute="top" secondItem="8hs-Wv-wig" secondAttribute="top" id="hPz-Io-9v8"/>
                             <constraint firstAttribute="bottom" secondItem="m23-5y-zgA" secondAttribute="bottom" id="hd5-aA-og6"/>
+                            <constraint firstItem="6Lz-RX-Djo" firstAttribute="trailing" secondItem="xLy-Ya-Sje" secondAttribute="trailing" constant="20" id="zo6-Pl-JpJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FWP-Qh-7oh">
@@ -67,6 +77,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blank avatar" width="860" height="681"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
