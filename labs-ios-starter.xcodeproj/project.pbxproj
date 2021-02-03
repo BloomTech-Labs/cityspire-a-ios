@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B119EEC25CA40E70074CFDB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B119EEB25CA40E70074CFDB /* Profile.storyboard */; };
+		0B119EEF25CA48C70074CFDB /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B119EEE25CA48C70074CFDB /* MyProfileViewController.swift */; };
+		0B119EF325CA48DA0074CFDB /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B119EF225CA48DA0074CFDB /* LocationDetailViewController.swift */; };
 		0BC516F025C26A5100FA5A64 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC516EF25C26A5100FA5A64 /* Map.storyboard */; };
 		0BC516F325C26A6E00FA5A64 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC516F225C26A6E00FA5A64 /* MapViewController.swift */; };
 		0BFC03C725C8F4EA00F19119 /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC03C625C8F4EA00F19119 /* ColorsHelper.swift */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		0B119EEB25CA40E70074CFDB /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		0B119EEE25CA48C70074CFDB /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		0B119EF225CA48DA0074CFDB /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		0BC516EF25C26A5100FA5A64 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0BC516F225C26A6E00FA5A64 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0BFC03C625C8F4EA00F19119 /* ColorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHelper.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				0B119EEB25CA40E70074CFDB /* Profile.storyboard */,
+				0B119EEE25CA48C70074CFDB /* MyProfileViewController.swift */,
+				0B119EF225CA48DA0074CFDB /* LocationDetailViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -242,6 +248,8 @@
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
+				0B119EF325CA48DA0074CFDB /* LocationDetailViewController.swift in Sources */,
+				0B119EEF25CA48C70074CFDB /* MyProfileViewController.swift in Sources */,
 				466C4274249A8748007D033E /* AppDelegate.swift in Sources */,
 				0BC516F325C26A6E00FA5A64 /* MapViewController.swift in Sources */,
 				46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */,
