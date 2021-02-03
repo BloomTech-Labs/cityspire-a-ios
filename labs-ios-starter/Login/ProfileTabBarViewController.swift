@@ -10,16 +10,16 @@ import UIKit
 
 class ProfileTabBarViewController: UITabBarController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(forName: .oktaAuthenticationExpired,
-                                                             object: nil,
-                                                             queue: .main,
-                                                             using: dismissToLogin)
-    }
-    
-    func dismissToLogin(_ notification: Notification)  {
-        dismiss(animated: true, completion: nil)
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        NotificationCenter.default.addObserver(forName: .oktaAuthenticationExpired,
+//                                                             object: nil,
+//                                                             queue: .main,
+//                                                             using: dismissToLogin)
+//    }
+//    
+//    func dismissToLogin(_ notification: Notification)  {
+//        dismiss(animated: true, completion: nil)
+//    }
 }
