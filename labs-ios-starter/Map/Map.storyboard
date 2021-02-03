@@ -27,6 +27,9 @@
                                     <constraint firstAttribute="height" constant="51" id="QTz-9l-jfI"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="blank avatar"/>
+                                <connections>
+                                    <segue destination="nAV-WG-bGB" kind="show" id="HCc-8r-dWg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Lz-RX-Djo"/>
@@ -54,6 +57,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yob-VZ-jx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="672.46376811594212" y="176.78571428571428"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="fSS-Q9-l2b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="nAV-WG-bGB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SL1-iQ-4f8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gj8-G0-OSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ir-Of-0JW">
