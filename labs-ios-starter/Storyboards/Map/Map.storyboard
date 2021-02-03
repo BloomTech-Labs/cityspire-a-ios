@@ -18,16 +18,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m23-5y-zgA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLy-Ya-Sje">
+                                <rect key="frame" x="338" y="111" width="56" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Jf4-Df-pjW"/>
+                                    <constraint firstAttribute="height" constant="51" id="QTz-9l-jfI"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="blank avatar"/>
+                                <connections>
+                                    <segue destination="nAV-WG-bGB" kind="show" id="HCc-8r-dWg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Lz-RX-Djo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Lz-RX-Djo" firstAttribute="trailing" secondItem="m23-5y-zgA" secondAttribute="trailing" id="3Ub-13-HCC"/>
-                            <constraint firstItem="m23-5y-zgA" firstAttribute="top" secondItem="6Lz-RX-Djo" secondAttribute="top" id="aFw-OJ-F7Y"/>
-                            <constraint firstItem="m23-5y-zgA" firstAttribute="leading" secondItem="6Lz-RX-Djo" secondAttribute="leading" id="cZ0-y2-TTg"/>
-                            <constraint firstItem="6Lz-RX-Djo" firstAttribute="bottom" secondItem="m23-5y-zgA" secondAttribute="bottom" id="g7x-UW-CJF"/>
+                            <constraint firstItem="xLy-Ya-Sje" firstAttribute="top" secondItem="6Lz-RX-Djo" secondAttribute="top" constant="23" id="7sg-s0-rs9"/>
+                            <constraint firstItem="m23-5y-zgA" firstAttribute="leading" secondItem="8hs-Wv-wig" secondAttribute="leading" id="Dcx-fr-tDr"/>
+                            <constraint firstItem="m23-5y-zgA" firstAttribute="trailing" secondItem="6Lz-RX-Djo" secondAttribute="trailing" id="IL5-uF-XWW"/>
+                            <constraint firstItem="m23-5y-zgA" firstAttribute="top" secondItem="8hs-Wv-wig" secondAttribute="top" id="ZyB-tB-tle"/>
+                            <constraint firstAttribute="bottom" secondItem="m23-5y-zgA" secondAttribute="bottom" id="vqT-tf-ccJ"/>
+                            <constraint firstItem="6Lz-RX-Djo" firstAttribute="trailing" secondItem="xLy-Ya-Sje" secondAttribute="trailing" constant="20" id="zo6-Pl-JpJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FWP-Qh-7oh">
@@ -43,18 +56,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yob-VZ-jx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="177"/>
+            <point key="canvasLocation" x="672.46376811594212" y="176.78571428571428"/>
         </scene>
-        <!--Map-->
+        <!--Profile-->
+        <scene sceneID="fSS-Q9-l2b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="nAV-WG-bGB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SL1-iQ-4f8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gj8-G0-OSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="96"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="6Ir-Of-0JW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LVP-7H-TuK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="9fa-28-pO1"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oz4-Fh-c7o">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -67,7 +90,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="blank avatar" width="860" height="681"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
