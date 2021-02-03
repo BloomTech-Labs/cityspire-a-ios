@@ -57,7 +57,7 @@ class MapViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             userLocationButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 20),
-            mapView.bottomAnchor.constraint(equalTo: userLocationButton.bottomAnchor, constant: 40)
+            mapView.bottomAnchor.constraint(equalTo: userLocationButton.bottomAnchor, constant: 60)
             
         ])
     }
