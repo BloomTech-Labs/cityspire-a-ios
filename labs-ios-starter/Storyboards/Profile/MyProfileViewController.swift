@@ -26,6 +26,7 @@ class MyProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setTextFieldAttributes()
+        
     }
     
     // MARK: - Navigation
