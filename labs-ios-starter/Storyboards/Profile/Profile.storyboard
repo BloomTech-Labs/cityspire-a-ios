@@ -31,11 +31,8 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tvk-40-TaO">
-                                <rect key="frame" x="0.0" y="430" width="414" height="466"/>
+                                <rect key="frame" x="0.0" y="440.5" width="414" height="455.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="466" id="x5O-xJ-KkI"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" textLabel="V6y-EP-bYE" detailTextLabel="rzN-PV-BnW" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="0mS-Zx-ZXZ">
                                         <rect key="frame" x="0.0" y="28" width="414" height="85"/>
@@ -71,7 +68,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="BQD-F9-6u8">
-                                <rect key="frame" x="40" y="312" width="334" height="111.5"/>
+                                <rect key="frame" x="40" y="312" width="334" height="112.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First and Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mra-uT-mro" userLabel="Name">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
@@ -84,8 +81,8 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Places" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU7-DN-1P0">
-                                        <rect key="frame" x="0.0" y="80" width="334" height="31.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                        <rect key="frame" x="0.0" y="80" width="334" height="32.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
                                         <color key="textColor" red="0.45882352941176469" green="0.4823529411764706" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -99,6 +96,7 @@
                             <constraint firstItem="epx-a1-JUt" firstAttribute="trailing" secondItem="fEL-F8-f0i" secondAttribute="trailing" id="7kQ-pW-9f9"/>
                             <constraint firstItem="Tvk-40-TaO" firstAttribute="trailing" secondItem="fEL-F8-f0i" secondAttribute="trailing" id="Etu-AD-N0k"/>
                             <constraint firstItem="BQD-F9-6u8" firstAttribute="leading" secondItem="fEL-F8-f0i" secondAttribute="leading" constant="40" id="IwS-4Y-o74"/>
+                            <constraint firstItem="Tvk-40-TaO" firstAttribute="top" secondItem="BQD-F9-6u8" secondAttribute="bottom" constant="16" id="JGA-ZZ-g84"/>
                             <constraint firstItem="epx-a1-JUt" firstAttribute="leading" secondItem="fEL-F8-f0i" secondAttribute="leading" id="JGE-je-fX6"/>
                             <constraint firstItem="fEL-F8-f0i" firstAttribute="trailing" secondItem="BQD-F9-6u8" secondAttribute="trailing" constant="40" id="Ljj-Ir-gRY"/>
                             <constraint firstItem="cpA-Aa-uQV" firstAttribute="centerX" secondItem="Bji-1o-H3b" secondAttribute="centerX" id="N2t-3s-m1W"/>
@@ -110,6 +108,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="Lhw-5c-RkO"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="cpA-Aa-uQV" id="zT2-zs-ZKA"/>
+                        <outlet property="emailtextField" destination="iuj-It-9O5" id="6vV-kt-Sj0"/>
+                        <outlet property="favoritePlacesLabel" destination="AU7-DN-1P0" id="8ks-IJ-Be9"/>
+                        <outlet property="nameTextField" destination="mra-uT-mro" id="iiJ-Nf-5go"/>
                         <outlet property="tableView" destination="Tvk-40-TaO" id="SYu-zh-zlA"/>
                     </connections>
                 </viewController>
