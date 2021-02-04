@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     // MARK: - Properties
     var userLocationButton: MKUserTrackingButton!
     let manager = CLLocationManager()
+    var locationName: String?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -84,6 +85,19 @@ extension MapViewController: MKMapViewDelegate {
         }
         return annotationView
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let ac = UIAlertController(title: locationName!, message: "What would you like to do?", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Add To Favorites", style: .default, handler: { (_) in
+            //Handle adding to favorites
+        }))
+        ac.addAction(UIAlertAction(title: "Details", style: .default, handler: { (_) in
+            //Handle viewing details
+            self.performSegue(withIdentifier: "LocationDetailSegue", sender: nil)
+        }))
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: nil))
+        present(ac, animated: true)
+    }
 }
 
 extension MapViewController: UISearchBarDelegate {
@@ -91,6 +105,7 @@ extension MapViewController: UISearchBarDelegate {
         
         // Creating Search Request
         guard let text = searchBar.text else { return }
+        self.locationName = text
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = text
         

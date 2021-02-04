@@ -52,6 +52,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="m23-5y-zgA" id="H6D-TQ-ifz"/>
+                        <segue destination="iyC-9C-JYH" kind="show" identifier="LocationDetailSegue" id="eXV-Du-L7i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yob-VZ-jx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -87,6 +88,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5Q-Ag-bhi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-20.289855072463769" y="176.78571428571428"/>
+        </scene>
+        <!--Selected Location Detail View Controller-->
+        <scene sceneID="8ZX-PP-4ty">
+            <objects>
+                <viewController id="iyC-9C-JYH" customClass="SelectedLocationDetailViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="weU-2i-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjC-Yi-Vj7">
+                                <rect key="frame" x="125" y="133" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cnv-O2-qED"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xgG-no-gpq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hzl-6o-ja7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896" y="908"/>
         </scene>
     </scenes>
     <resources>
