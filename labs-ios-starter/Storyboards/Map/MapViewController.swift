@@ -20,11 +20,11 @@ class MapViewController: UIViewController {
     var userLocationButton: MKUserTrackingButton!
     let manager = CLLocationManager()
 
-
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutTrackingButton()
+        mapView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +58,6 @@ class MapViewController: UIViewController {
         NSLayoutConstraint.activate([
             userLocationButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 20),
             mapView.bottomAnchor.constraint(equalTo: userLocationButton.bottomAnchor, constant: 60)
-            
         ])
     }
 }
@@ -74,7 +73,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "Placemark"
+        let identifier = "Pin"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
