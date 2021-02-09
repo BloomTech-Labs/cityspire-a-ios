@@ -70,8 +70,6 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
         // Test Cell
         // MARK: TODO
         // Create swift file for table view cell
-        cell.textLabel?.text = "Location"
-        cell.detailTextLabel?.text = "Number of places for rent?"
         return cell
     }
 }
