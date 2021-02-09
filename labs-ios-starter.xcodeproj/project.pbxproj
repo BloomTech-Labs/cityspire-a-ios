@@ -27,6 +27,7 @@
 		46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		950BBC7B25CA5075005CB847 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 950BBC7A25CA5075005CB847 /* Lottie */; };
+		95D3A8D325D22CC900C202DA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3A8D225D22CC900C202DA /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		46BEB4E624C98D8900FE0CD1 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
+		95D3A8D225D22CC900C202DA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				0B119EEB25CA40E70074CFDB /* Profile.storyboard */,
 				0B119EEE25CA48C70074CFDB /* MyProfileViewController.swift */,
 				0B119EF225CA48DA0074CFDB /* LocationDetailViewController.swift */,
+				95D3A8D225D22CC900C202DA /* LocationTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				0B119F0225CBAEA60074CFDB /* SelectedLocationDetailViewController.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
+				95D3A8D325D22CC900C202DA /* LocationTableViewCell.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
 				0B119EF325CA48DA0074CFDB /* LocationDetailViewController.swift in Sources */,
 				0B119EEF25CA48C70074CFDB /* MyProfileViewController.swift in Sources */,
