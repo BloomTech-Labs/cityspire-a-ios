@@ -10,6 +10,7 @@
 		0B119EEC25CA40E70074CFDB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B119EEB25CA40E70074CFDB /* Profile.storyboard */; };
 		0B119EEF25CA48C70074CFDB /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B119EEE25CA48C70074CFDB /* MyProfileViewController.swift */; };
 		0B119EF325CA48DA0074CFDB /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B119EF225CA48DA0074CFDB /* LocationDetailViewController.swift */; };
+		0B119F0225CBAEA60074CFDB /* SelectedLocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B119F0125CBAEA60074CFDB /* SelectedLocationDetailViewController.swift */; };
 		0BC516F025C26A5100FA5A64 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC516EF25C26A5100FA5A64 /* Map.storyboard */; };
 		0BC516F325C26A6E00FA5A64 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC516F225C26A6E00FA5A64 /* MapViewController.swift */; };
 		0BFC03C725C8F4EA00F19119 /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC03C625C8F4EA00F19119 /* ColorsHelper.swift */; };
@@ -32,6 +33,7 @@
 		0B119EEB25CA40E70074CFDB /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0B119EEE25CA48C70074CFDB /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		0B119EF225CA48DA0074CFDB /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		0B119F0125CBAEA60074CFDB /* SelectedLocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationDetailViewController.swift; sourceTree = "<group>"; };
 		0BC516EF25C26A5100FA5A64 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0BC516F225C26A6E00FA5A64 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0BFC03C625C8F4EA00F19119 /* ColorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHelper.swift; sourceTree = "<group>"; };
@@ -79,7 +81,6 @@
 			children = (
 				46BEB4EF24C98ED900FE0CD1 /* Login */,
 				0BC516EE25C26A2900FA5A64 /* Map */,
-				0B119EEA25CA40B70074CFDB /* Profile */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -89,6 +90,7 @@
 			children = (
 				0BC516EF25C26A5100FA5A64 /* Map.storyboard */,
 				0BC516F225C26A6E00FA5A64 /* MapViewController.swift */,
+				0B119F0125CBAEA60074CFDB /* SelectedLocationDetailViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -125,6 +127,7 @@
 				46BEB4EB24C98EB400FE0CD1 /* Model */,
 				46BEB4EC24C98EBB00FE0CD1 /* Model Controller */,
 				0B119EF625CA4C800074CFDB /* Storyboards */,
+				0B119EEA25CA40B70074CFDB /* Profile */,
 				46BEB4EA24C98EA300FE0CD1 /* Helpers */,
 				465DAA2724BD0BC100D94C24 /* App Lifecycle */,
 				466C427C249A8749007D033E /* Assets.xcassets */,
@@ -254,6 +257,7 @@
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				0BFC03C725C8F4EA00F19119 /* ColorsHelper.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
+				0B119F0225CBAEA60074CFDB /* SelectedLocationDetailViewController.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,

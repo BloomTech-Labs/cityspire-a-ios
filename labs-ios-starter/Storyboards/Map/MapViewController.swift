@@ -19,12 +19,13 @@ class MapViewController: UIViewController {
     // MARK: - Properties
     var userLocationButton: MKUserTrackingButton!
     let manager = CLLocationManager()
-
+    var locationName: String?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutTrackingButton()
+        mapView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +59,6 @@ class MapViewController: UIViewController {
         NSLayoutConstraint.activate([
             userLocationButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 20),
             mapView.bottomAnchor.constraint(equalTo: userLocationButton.bottomAnchor, constant: 60)
-            
         ])
     }
 }
@@ -72,11 +72,40 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "Pin"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        } else {
+            annotationView?.annotation = annotation
+        }
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let ac = UIAlertController(title: locationName!, message: "What would you like to do?", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Add To Favorites", style: .default, handler: { (_) in
+            //Handle adding to favorites
+        }))
+        ac.addAction(UIAlertAction(title: "Details", style: .default, handler: { (_) in
+            //Handle viewing details
+            self.performSegue(withIdentifier: "LocationDetailSegue", sender: nil)
+        }))
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: nil))
+        present(ac, animated: true)
+    }
+}
+
 extension MapViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         // Creating Search Request
         guard let text = searchBar.text else { return }
+        self.locationName = text
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = text
         
