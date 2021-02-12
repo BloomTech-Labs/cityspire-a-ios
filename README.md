@@ -32,6 +32,8 @@ CitySpire is an application that allows users to search for cities they are inte
 	
 ### Sample Video
 * Here is a screenshot for now. The video is still rendering...
+
+
 ![cityspireapp screenshot](https://i.imgur.com/XSeLgEm.png)
 		
 #### Install Instructions
