@@ -1,5 +1,5 @@
-# Mobile-App
-![cityspireapp logo](https://github.com/Lambda-School-Labs/cityspire-a-ios/blob/additional-files/city-4679928_1920%20copy.png)
+# CitySpire
+![cityspireapp logo](https://i.imgur.com/ntIDneE.png)
 
 ### What is CitySpire?
 CitySpire is an application that allows users to search for cities they are interested in moving to. CitySpire displays data relating to population history, crime rate, rental rate, as well as rental and population prediction!
@@ -32,7 +32,7 @@ CitySpire is an application that allows users to search for cities they are inte
 	
 ### Sample Video
 * Here is a screenshot for now. The video is still rendering...
-![cityspireapp screenshot](https://github.com/Lambda-School-Labs/cityspire-a-ios/blob/additional-files/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202021-02-11%20at%2021.58.55.png)
+![cityspireapp screenshot](https://i.imgur.com/XSeLgEm.png)
 		
 #### Install Instructions
 1. Clone this repository
