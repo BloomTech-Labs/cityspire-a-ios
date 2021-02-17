@@ -90,14 +90,10 @@ class LocationController {
         request.httpMethod = HTTPMethod.get.rawValue
         request.addValue("Bearer \(bearer!)", forHTTPHeaderField: "Authorization")
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error{
                 print("Error getting all saved cities: \(error)")
                 completion(.failure(.tryAgain))
-            }
-            
-            if let response = response {
-                print(response)
             }
             
             guard let data = data else {
@@ -111,6 +107,17 @@ class LocationController {
             } catch {
                 print("Error retrieving saved locations: \(error)")
             }
+        }
+        task.resume()
+    }
+    
+    func deleteSavedFavoriteCity(id: Int, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+        self.bearer = profileController.bearer
+        var request = URLRequest(url: baseURL.appendingPathComponent("saved/\(id)"))
+        request.httpMethod = HTTPMethod.delete.rawValue
+        request.addValue("Bearer \(bearer!)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { (_, _, _) in
+            completion(.success(true))
         }
         task.resume()
     }
