@@ -19,20 +19,29 @@ class LocationDetailViewController: UIViewController {
     
     // MARK: - Properties
     let locationController = LocationController.shared
-    var location: Location? {
+    var locationName: String? {
         didSet{
             updateViews()
         }
     }
     
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     // MARK: - Private Methods
     private func updateViews() {
-        
+        guard let locationName = locationName else { return }
+        locationController.getCityDetails(name: locationName) { (returnedLocation) in
+            do {
+                let result = try returnedLocation.get()
+                DispatchQueue.main.async {
+                    self.locationNameLabel.text = self.locationName
+                    self.populationLabel.text = "\(result.population)"
+                    self.crimeLabel.text = "\(result.crimeRate)"
+                    self.rentalLabel.text = "\(result.rentalRate)"
+                    self.walkScoreLabel.text = "\(result.walkScore)"
+                }
+            } catch {
+                print("Error getting location data: \(error)")
+            }
+        }
     }
 }
 
