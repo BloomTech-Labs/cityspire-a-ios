@@ -22,20 +22,26 @@ class SelectedLocationDetailViewController: UIViewController {
     var locationID: Int?
     var locationName: String? {
         didSet {
-            locationController.getCityDetails(name: locationName!) { (returnedLocation) in
-                do {
-                    let result = try returnedLocation.get()
-                    self.locationID = result.id
-                    DispatchQueue.main.async {
-                        self.nameLabel.text = self.locationName
-                        self.populationLabel.text = "\(result.population)"
-                        self.crimeLabel.text = "\(result.crimeRate)"
-                        self.rentalLabel.text = "\(result.rentalRate)"
-                        self.walkScoreLabel.text = "\(result.walkScore)"
-                    }
-                } catch {
-                    print("Error getting Location Data:\(error)")
+            updateViews()
+        }
+    }
+    
+    // MARK: - Private Methods
+    private func updateViews() {
+        guard let locationName = locationName else { return }
+        locationController.getCityDetails(name: locationName) { (returnedLocation) in
+            do {
+                let result = try returnedLocation.get()
+                self.locationID = result.id
+                DispatchQueue.main.async {
+                    self.nameLabel.text = self.locationName
+                    self.populationLabel.text = "\(result.population)"
+                    self.crimeLabel.text = "\(result.crimeRate)"
+                    self.rentalLabel.text = "\(result.rentalRate)"
+                    self.walkScoreLabel.text = "\(result.walkScore)"
                 }
+            } catch {
+                print("Error getting location data: \(error)")
             }
         }
     }
