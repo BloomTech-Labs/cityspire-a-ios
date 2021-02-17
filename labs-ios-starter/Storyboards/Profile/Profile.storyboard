@@ -77,7 +77,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="locationNameLabel" destination="rba-gv-4Nf" id="s1g-Ox-IIV"/>
-                                            <segue destination="ZMi-U0-In6" kind="show" id="r4V-st-d8J"/>
+                                            <segue destination="ZMi-U0-In6" kind="show" identifier="LocationDetailViewSegue" id="r4V-st-d8J"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -207,7 +207,7 @@
                     <navigationItem key="navigationItem" title="Location Detail View" id="2zL-B4-orr"/>
                     <connections>
                         <outlet property="crimeLabel" destination="2Gp-27-Csb" id="2sq-Eb-Fia"/>
-                        <outlet property="locationNameLabel" destination="3jr-I9-f6v" id="pju-W9-lnv"/>
+                        <outlet property="locationNameLabel" destination="i0S-d9-5fA" id="cIz-uV-xYd"/>
                         <outlet property="populationLabel" destination="3Q1-Ld-6Wb" id="hVt-Ed-Erm"/>
                         <outlet property="rentalLabel" destination="B6H-Sh-a5r" id="6Qn-Zt-D03"/>
                         <outlet property="walkScoreLabel" destination="Wbf-2K-mgc" id="p9B-cm-L9u"/>
