@@ -24,7 +24,7 @@ enum HTTPMethod: String {
 class LocationController {
     // MARK: - Properties
     let profileController = ProfileController.shared
-    var bearer: String?
+    private var bearer: String?
     private let baseURL = URL(string: "https://labspt15-cityspire-a.herokuapp.com/")!
     static let shared = LocationController()
     
@@ -57,6 +57,10 @@ class LocationController {
             }
         }
         task.resume()
+    }
+    
+    func saveCityAsFavorite() {
+        
     }
     
 
