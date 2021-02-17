@@ -121,5 +121,37 @@ class LocationController {
         }
         task.resume()
     }
+    
+    func getCityDataWithoutName(id: Int, completion: @escaping (Result<Location, NetworkError>) -> Void) {
+        self.bearer = profileController.bearer
+        var request = URLRequest(url: baseURL.appendingPathComponent("data/id_num/\(id)"))
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("Bearer \(bearer!)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error{
+                print("Error getting location data: \(error)")
+                completion(.failure(.tryAgain))
+                return
+            }
+            
+            if let response = response {
+                print(response)
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noDataReturned))
+                return
+            }
+            
+            do{
+                let returnedLocation = try JSONDecoder().decode(Location.self, from: data)
+                completion(.success(returnedLocation))
+            } catch {
+                print("Error decoding JSON: \(error)")
+                completion(.failure(.badDecode))
+            }
+        }
+        task.resume()
+    }
 
 }
