@@ -62,7 +62,7 @@ class LocationController {
     
     func saveCityAsFavorite(location: SavedLocation, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         self.bearer = profileController.bearer
-        let requestURL = baseURL.appendingPathComponent("/saved")
+        let requestURL = baseURL.appendingPathComponent("saved")
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.addValue("Bearer \(bearer!)", forHTTPHeaderField: "Authorization")

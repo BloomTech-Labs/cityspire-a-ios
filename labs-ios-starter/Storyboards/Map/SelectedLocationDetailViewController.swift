@@ -42,8 +42,16 @@ class SelectedLocationDetailViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func saveToFavoritesTapped(_ sender: UIButton) {
-        
+        guard let name = locationName else { return }
+        guard let id = locationID else { return }
+        let savedcity = SavedLocation(name: name, cityID: id)
+        locationController.saveCityAsFavorite(location: savedcity) { (_) in
+            DispatchQueue.main.async {
+                let ac = UIAlertController(title: "Location Saved", message: "\(name) has been added to favorites.", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                self.present(ac, animated: true)
+            }
+        }
     }
-    
     
 }
