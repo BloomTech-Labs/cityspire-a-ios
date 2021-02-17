@@ -47,7 +47,11 @@ class MyProfileViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if segue.identifier == "LocationDetailViewSegue"{
+            let detailVC = segue.destination as! LocationDetailViewController
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            detailVC.locationName = mySavedLocations[indexPath.row].name
+        }
     }
 
     // MARK: - Private
