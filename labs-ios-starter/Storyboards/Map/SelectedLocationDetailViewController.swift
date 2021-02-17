@@ -19,11 +19,13 @@ class SelectedLocationDetailViewController: UIViewController {
     
     // MARK: - Properties
     let locationController = LocationController.shared
+    var locationID: Int?
     var locationName: String? {
         didSet {
             locationController.getCityDetails(name: locationName!) { (returnedLocation) in
                 do {
                     let result = try returnedLocation.get()
+                    self.locationID = result.id
                     DispatchQueue.main.async {
                         self.nameLabel.text = self.locationName
                         self.populationLabel.text = "\(result.population)"
@@ -32,7 +34,7 @@ class SelectedLocationDetailViewController: UIViewController {
                         self.walkScoreLabel.text = "\(result.walkScore)"
                     }
                 } catch {
-                    print("You made an error haha: \(error)")
+                    print("Error getting Location Data:\(error)")
                 }
             }
         }
