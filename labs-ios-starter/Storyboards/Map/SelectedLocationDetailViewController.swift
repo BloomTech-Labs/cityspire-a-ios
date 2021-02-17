@@ -9,22 +9,33 @@
 import UIKit
 
 class SelectedLocationDetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var populationLabel: UILabel!
+    @IBOutlet weak var crimeLabel: UILabel!
+    @IBOutlet weak var rentalLabel: UILabel!
+    @IBOutlet weak var walkScoreLabel: UILabel!
+    
+    // MARK: - Properties
+    let locationController = LocationController.shared
+    var locationName: String? {
+        didSet {
+            locationController.getCityDetails(name: locationName!) { (returnedLocation) in
+                do {
+                    let result = try returnedLocation.get()
+                    DispatchQueue.main.async {
+                        self.nameLabel.text = self.locationName
+                        self.populationLabel.text = "\(result.population)"
+                        self.crimeLabel.text = "\(result.crimeRate)"
+                        self.rentalLabel.text = "\(result.rentalRate)"
+                        self.walkScoreLabel.text = "\(result.walkScore)"
+                    }
+                } catch {
+                    print("You made an error haha: \(error)")
+                }
+            }
+        }
     }
     
-
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    
-
 }

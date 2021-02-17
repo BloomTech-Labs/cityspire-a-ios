@@ -20,12 +20,14 @@ class MapViewController: UIViewController {
     var userLocationButton: MKUserTrackingButton!
     let manager = CLLocationManager()
     var locationName: String?
+    let locationController = LocationController.shared
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutTrackingButton()
         mapView.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +62,13 @@ class MapViewController: UIViewController {
             userLocationButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 20),
             mapView.bottomAnchor.constraint(equalTo: userLocationButton.bottomAnchor, constant: 60)
         ])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LocationDetailSegue" {
+            let detailVC = segue.destination as! SelectedLocationDetailViewController
+            detailVC.locationName = self.locationName
+        }
     }
 }
 

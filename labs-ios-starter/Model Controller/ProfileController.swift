@@ -20,6 +20,8 @@ class ProfileController {
     private(set) var authenticatedUserProfile: Profile?
     private(set) var profiles: [Profile] = []
     
+    var bearer: String?
+    
     private let baseURL = URL(string: "https://cityspire-a-be.herokuapp.com/")!
     
     private init() {
@@ -52,7 +54,7 @@ class ProfileController {
         var request = URLRequest(url: requestURL)
         
         request.addValue("Bearer \(oktaCredentials.idToken)", forHTTPHeaderField: "Authorization")
-        
+        self.bearer = oktaCredentials.idToken
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             defer {
