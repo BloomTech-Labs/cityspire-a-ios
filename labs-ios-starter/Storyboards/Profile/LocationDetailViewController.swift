@@ -18,14 +18,22 @@ class LocationDetailViewController: UIViewController {
     @IBOutlet weak var walkScoreLabel: UILabel!
     
     // MARK: - Properties
-    
+    let locationController = LocationController.shared
+    var location: Location? {
+        didSet{
+            updateViews()
+        }
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: - Methods
+    // MARK: - Private Methods
+    private func updateViews() {
+        
+    }
 }
 
 
