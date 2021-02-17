@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B119F0225CBAEA60074CFDB /* SelectedLocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B119F0125CBAEA60074CFDB /* SelectedLocationDetailViewController.swift */; };
+		0B8B699725DCBFDB00B9F55E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B699625DCBFDB00B9F55E /* Location.swift */; };
 		0BC516F025C26A5100FA5A64 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC516EF25C26A5100FA5A64 /* Map.storyboard */; };
 		0BC516F325C26A6E00FA5A64 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC516F225C26A6E00FA5A64 /* MapViewController.swift */; };
 		0BFC03C725C8F4EA00F19119 /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC03C625C8F4EA00F19119 /* ColorsHelper.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0B119F0125CBAEA60074CFDB /* SelectedLocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationDetailViewController.swift; sourceTree = "<group>"; };
+		0B8B699625DCBFDB00B9F55E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0BC516EF25C26A5100FA5A64 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0BC516F225C26A6E00FA5A64 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0BFC03C625C8F4EA00F19119 /* ColorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHelper.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				46BEB4E024C9828800FE0CD1 /* Profile.swift */,
+				0B8B699625DCBFDB00B9F55E /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				0B119F0225CBAEA60074CFDB /* SelectedLocationDetailViewController.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
+				0B8B699725DCBFDB00B9F55E /* Location.swift in Sources */,
 				95A6A92825D37ED500C4B8FB /* LocationDetailViewController.swift in Sources */,
 				95A6A92625D37ED500C4B8FB /* LocationTableViewCell.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
