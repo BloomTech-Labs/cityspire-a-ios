@@ -38,14 +38,10 @@ class LocationController {
         request.httpMethod = HTTPMethod.get.rawValue
         request.addValue("Bearer \(bearer!)", forHTTPHeaderField: "Authorization")
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 print(error)
                 completion(.failure(.tryAgain))
-            }
-            
-            if let response = response {
-                print(response)
             }
             
             guard let data = data else {
