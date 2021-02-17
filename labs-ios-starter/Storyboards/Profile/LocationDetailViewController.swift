@@ -10,9 +10,15 @@ import UIKit
 
 class LocationDetailViewController: UIViewController {
     
-    // MARK: - IBActions
+    // MARK: - IBOutlets
+    @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var populationLabel: UILabel!
+    @IBOutlet weak var crimeLabel: UILabel!
+    @IBOutlet weak var rentalLabel: UILabel!
+    @IBOutlet weak var walkScoreLabel: UILabel!
     
     // MARK: - Properties
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
