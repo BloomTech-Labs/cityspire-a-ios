@@ -14,8 +14,8 @@ struct Location: Codable{
     var crimeRate: Double
     var rentalRate: Double
     var walkScore: Int
-    var city: String
-    var state: String
+    var city: String?
+    var state: String?
     
     enum CodingKeys: String, CodingKey{
         case id = "id_num"
