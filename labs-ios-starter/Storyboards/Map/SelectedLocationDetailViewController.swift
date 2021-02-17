@@ -40,4 +40,10 @@ class SelectedLocationDetailViewController: UIViewController {
         }
     }
     
+    // MARK: - IBActions
+    @IBAction func saveToFavoritesTapped(_ sender: UIButton) {
+        
+    }
+    
+    
 }
