@@ -87,7 +87,16 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
+            let location = mySavedLocations[indexPath.row]
+            locationController.deleteSavedFavoriteCity(id: location.id) { (_) in
+                self.mySavedLocations.remove(at: indexPath.row)
+                DispatchQueue.main.async {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    tableView.reloadData()
+                }
+            }
         }
     }
+    
+    
 }
