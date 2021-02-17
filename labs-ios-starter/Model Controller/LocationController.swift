@@ -13,6 +13,7 @@ enum NetworkError: Error {
     case noToken
     case badDecode
     case tryAgain
+    case badEncode
 }
 
 enum HTTPMethod: String {
@@ -33,7 +34,6 @@ class LocationController {
         self.bearer = profileController.bearer
         
         let requestURL = baseURL.appendingPathComponent("data/predict/" + name)
-        print(requestURL.absoluteString)
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         request.addValue("Bearer \(bearer!)", forHTTPHeaderField: "Authorization")
@@ -42,6 +42,7 @@ class LocationController {
             if let error = error {
                 print(error)
                 completion(.failure(.tryAgain))
+                return
             }
             
             guard let data = data else {
@@ -59,8 +60,32 @@ class LocationController {
         task.resume()
     }
     
-    func saveCityAsFavorite() {
-        
+    func saveCityAsFavorite(location: SavedLocation, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+        self.bearer = profileController.bearer
+        let requestURL = baseURL.appendingPathComponent("/saved")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue("Bearer \(bearer!)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let jsonData = try JSONEncoder().encode(location)
+            request.httpBody = jsonData
+            let task = URLSession.shared.dataTask(with: request) { (_, response, error) in
+                if let error = error {
+                    print(error)
+                    completion(.failure(.tryAgain))
+                }
+                
+                if let response = response {
+                    print(response)
+                }
+                completion(.success(true))
+            }
+            task.resume()
+        } catch {
+            print("Error encoding the city data: \(error)")
+            completion(.failure(.badEncode))
+        }
     }
     
 
