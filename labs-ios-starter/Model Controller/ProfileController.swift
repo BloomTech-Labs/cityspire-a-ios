@@ -55,7 +55,6 @@ class ProfileController {
         
         request.addValue("Bearer \(oktaCredentials.idToken)", forHTTPHeaderField: "Authorization")
         self.bearer = oktaCredentials.idToken
-        print(bearer)
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             defer {
