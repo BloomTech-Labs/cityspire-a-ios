@@ -29,6 +29,7 @@
 		46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		950BBC7B25CA5075005CB847 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 950BBC7A25CA5075005CB847 /* Lottie */; };
+		9562F6A425DE264700190B7D /* 39992-walking.json in Resources */ = {isa = PBXBuildFile; fileRef = 9562F6A325DE264700190B7D /* 39992-walking.json */; };
 		95A6A92725D37ED500C4B8FB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A6A92325D37ED500C4B8FB /* Profile.storyboard */; };
 		95A6A92825D37ED500C4B8FB /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A6A92425D37ED500C4B8FB /* LocationDetailViewController.swift */; };
 		95A6A92925D37ED500C4B8FB /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A6A92525D37ED500C4B8FB /* MyProfileViewController.swift */; };
@@ -58,6 +59,7 @@
 		46BEB4E624C98D8900FE0CD1 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
+		9562F6A325DE264700190B7D /* 39992-walking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "39992-walking.json"; sourceTree = "<group>"; };
 		95A6A92325D37ED500C4B8FB /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		95A6A92425D37ED500C4B8FB /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		95A6A92525D37ED500C4B8FB /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -177,9 +179,18 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		9562F6A225DE262100190B7D /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9562F6A325DE264700190B7D /* 39992-walking.json */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
 		95A6A92125D37ED500C4B8FB /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9562F6A225DE262100190B7D /* LottieFiles */,
 				95A6A92325D37ED500C4B8FB /* Profile.storyboard */,
 				95A6A92425D37ED500C4B8FB /* LocationDetailViewController.swift */,
 				95A6A92525D37ED500C4B8FB /* MyProfileViewController.swift */,
@@ -258,6 +269,7 @@
 				466C427D249A8749007D033E /* Assets.xcassets in Resources */,
 				95A6A92725D37ED500C4B8FB /* Profile.storyboard in Resources */,
 				0BC516F025C26A5100FA5A64 /* Map.storyboard in Resources */,
+				9562F6A425DE264700190B7D /* 39992-walking.json in Resources */,
 				466C427B249A8748007D033E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
