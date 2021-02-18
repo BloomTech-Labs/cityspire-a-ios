@@ -19,6 +19,8 @@ class MyProfileViewController: UIViewController {
 
     // MARK: - Properties
     var profileController: ProfileController = ProfileController.shared
+    let locationController = LocationController.shared
+    var mySavedLocations: [ReturnedLocation] = []
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,12 +28,30 @@ class MyProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setTextFieldAttributes()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        locationController.getAllSavedFavoriteCities { (result) in
+            do{
+                let returnedLocations = try result.get()
+                self.mySavedLocations = returnedLocations
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print("Error getting back saved location data: \(error)")
+            }
+        }
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if segue.identifier == "LocationDetailViewSegue"{
+            let detailVC = segue.destination as! LocationDetailViewController
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            detailVC.locationName = mySavedLocations[indexPath.row].name
+        }
     }
 
     // MARK: - Private
@@ -60,16 +80,27 @@ class MyProfileViewController: UIViewController {
 // MARK: - Extensions
 extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // MARK: TODO
-        // Update this with correct number of rows
-        return 1
+        return mySavedLocations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") else { return UITableViewCell()}
-        // Test Cell
-        // MARK: TODO
-        // Create swift file for table view cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as? LocationTableViewCell else { return UITableViewCell()}
+        cell.location = mySavedLocations[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let location = mySavedLocations[indexPath.row]
+            locationController.deleteSavedFavoriteCity(id: location.id) { (_) in
+                self.mySavedLocations.remove(at: indexPath.row)
+                DispatchQueue.main.async {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    
 }
