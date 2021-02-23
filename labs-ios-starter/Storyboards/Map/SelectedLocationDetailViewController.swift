@@ -17,8 +17,8 @@ class SelectedLocationDetailViewController: UIViewController {
     @IBOutlet weak var crimeLabel: UILabel!
     @IBOutlet weak var rentalLabel: UILabel!
     @IBOutlet weak var walkScoreLabel: UILabel!
-    @IBOutlet weak var walkingAnimationView: UIView!
-    @IBOutlet weak var rentalAnimationView: UIView!
+    @IBOutlet weak var walkScoreAnimationView: UIView!
+    @IBOutlet weak var rentalScoreAnimationView: UIView!
     
     // MARK: - Properties
     let locationController = LocationController.shared
@@ -28,8 +28,13 @@ class SelectedLocationDetailViewController: UIViewController {
             updateViews()
         }
     }
-    let walkingAnimation = Animation.named("39992-walking")
-    let rentalAnimation = Animation.named("39992-walking")
+    let walkingAnimation = Animation.named("3999-walking")
+    let rentalAnimation = Animation.named("46411-money-for-insurance")
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        runAnimations()
+    }
     
     // MARK: - Private Methods
     private func updateViews() {
@@ -49,6 +54,24 @@ class SelectedLocationDetailViewController: UIViewController {
                 print("Error getting location data: \(error)")
             }
         }
+    }
+
+    private func runAnimations() {
+        let animationViewWalking = AnimationView(animation: walkingAnimation)
+        animationViewWalking.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        animationViewWalking.contentMode = .scaleAspectFit
+        animationViewWalking.loopMode = .loop
+
+        walkScoreAnimationView.addSubview(animationViewWalking)
+        animationViewWalking.play()
+
+        let animationViewRental = AnimationView(animation: rentalAnimation)
+        animationViewRental.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        animationViewRental.contentMode = .scaleAspectFit
+        animationViewRental.loopMode = .loop
+
+        rentalScoreAnimationView.addSubview(animationViewRental)
+        animationViewRental.play()
     }
     
     // MARK: - IBActions
