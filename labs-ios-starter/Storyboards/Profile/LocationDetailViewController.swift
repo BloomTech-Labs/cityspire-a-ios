@@ -39,6 +39,7 @@ class LocationDetailViewController: UIViewController {
 
         walkingAnimationView.addSubview(animationView)
         animationView.play()
+        zoomToLocation(locationName: locationName!)
     }
     // MARK: - Private Methods
     private func updateViews() {
@@ -57,6 +58,36 @@ class LocationDetailViewController: UIViewController {
                 print("Error getting location data: \(error)")
             }
         }
+    }
+    
+    private func zoomToLocation(locationName: String) {
+       
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = locationName
+        
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start { (response, error) in
+            if response == nil{
+                print("Error getting search data")
+            } else {
+                let annotations = self.detailMapView.annotations
+                self.detailMapView.removeAnnotations(annotations)
+                
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                let annotation = MKPointAnnotation()
+                annotation.title = locationName
+                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                self.detailMapView.addAnnotation(annotation)
+                
+                let coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                let region = MKCoordinateRegion(center: coordinate, span: span)
+                self.detailMapView.setRegion(region, animated: true)
+            }
+        }
+
     }
 }
 
