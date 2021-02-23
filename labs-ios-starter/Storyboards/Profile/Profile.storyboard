@@ -101,6 +101,7 @@
                                                 <constraint firstItem="qQd-4d-USs" firstAttribute="leading" secondItem="yfx-M2-xBO" secondAttribute="leadingMargin" constant="12" id="j0P-ar-WYW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="crimeRateDisplay" destination="MRb-u3-Jns" id="5tg-Ua-E1B"/>
                                             <outlet property="locationNameLabel" destination="rba-gv-4Nf" id="s1g-Ox-IIV"/>
