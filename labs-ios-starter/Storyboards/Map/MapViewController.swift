@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var profileButton: UIButton!
     
 
     // MARK: - Properties
@@ -27,7 +28,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         layoutTrackingButton()
         mapView.delegate = self
-        
+        layoutProfileButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +52,14 @@ class MapViewController: UIViewController {
         manager.requestWhenInUseAuthorization()
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
+    }
+    
+    private func layoutProfileButton(){
+        profileButton.layer.cornerRadius = 25
+        profileButton.layer.shadowOffset = CGSize(width: -5, height: 5)
+        profileButton.layer.shadowOpacity = 0.6
+        profileButton.layer.shadowRadius = 5
+        profileButton.layer.shadowColor = UIColor.black.cgColor
     }
     
     private func layoutTrackingButton() {
