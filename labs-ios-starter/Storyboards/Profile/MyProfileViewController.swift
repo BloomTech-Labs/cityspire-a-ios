@@ -28,7 +28,7 @@ class MyProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setTextFieldAttributes()
-        tableView.backgroundColor = ColorsHelper.sonicSilver
+        tableView.backgroundColor = ColorsHelper.lightFrenchBeige
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,8 +110,15 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as? LocationTableViewCell else { return UITableViewCell()}
         cell.location = mySavedLocations[indexPath.row]
         cell.contentView.layer.cornerRadius = 15
-        cell.contentView.layer.backgroundColor = ColorsHelper.lightFrenchBeige.cgColor
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if(indexPath.row % 2 == 0){
+            cell.contentView.layer.backgroundColor = UIColor.white.cgColor
+        } else {
+            cell.contentView.layer.backgroundColor = ColorsHelper.nonPhotoBlue.cgColor
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
