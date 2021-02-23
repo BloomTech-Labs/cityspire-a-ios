@@ -13,8 +13,6 @@ struct ReturnedLocation: Codable{
     var id: Int
     var name: String
     var cityID: String
-    var lattitude: CLLocationCoordinate2D?
-    var longitude: CLLocationCoordinate2D?
     
     enum CodingKeys: String, CodingKey{
         case cityID = "city_id"
