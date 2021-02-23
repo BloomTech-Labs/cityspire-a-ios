@@ -86,6 +86,8 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as? LocationTableViewCell else { return UITableViewCell()}
         cell.location = mySavedLocations[indexPath.row]
+        cell.contentView.layer.cornerRadius = 15
+        cell.contentView.layer.backgroundColor = ColorsHelper.harvestGold.cgColor
         return cell
     }
     

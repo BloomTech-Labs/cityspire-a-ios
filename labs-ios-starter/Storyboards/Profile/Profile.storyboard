@@ -303,7 +303,7 @@
     </scenes>
     <resources>
         <image name="LoginBkgd" width="187.5" height="406"/>
-        <image name="blank avatar" width="860" height="681"/>
+        <image name="blank avatar" width="612" height="605"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
