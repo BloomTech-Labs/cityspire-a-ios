@@ -52,6 +52,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="m23-5y-zgA" id="H6D-TQ-ifz"/>
+                        <outlet property="profileButton" destination="xLy-Ya-Sje" id="ebT-fr-7lI"/>
                         <segue destination="iyC-9C-JYH" kind="show" identifier="LocationDetailSegue" id="eXV-Du-L7i"/>
                     </connections>
                 </viewController>

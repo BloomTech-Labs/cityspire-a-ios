@@ -25,6 +25,12 @@ class LocationTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Initalizers
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+    }
     // MARK: - Helper Functions
     private func updateViews() {
         guard let location = location else { return }

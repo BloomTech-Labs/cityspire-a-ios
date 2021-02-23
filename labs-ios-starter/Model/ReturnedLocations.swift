@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct ReturnedLocation: Codable{
     var id: Int

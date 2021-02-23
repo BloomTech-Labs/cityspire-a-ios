@@ -28,6 +28,7 @@ class MyProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setTextFieldAttributes()
+        tableView.backgroundColor = ColorsHelper.lightFrenchBeige
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +39,7 @@ class MyProfileViewController: UIViewController {
                 self.mySavedLocations = returnedLocations
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.animateTable()
                 }
             } catch {
                 print("Error getting back saved location data: \(error)")
@@ -75,7 +77,28 @@ class MyProfileViewController: UIViewController {
 
         avatarImageView.image = profileController.authenticatedUserProfile?.avatarImage
     }
+    
+    private func animateTable() {
+        let cells = tableView.visibleCells
+        
+//        let tableViewHeight = tableView.bounds.size.height
+        let tableViewWidth = tableView.bounds.size.width
+        
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: -tableViewWidth, y: 0)
+        }
+        var delayCounter = 0
+        
+        for cell in cells {
+            UIView.animate(withDuration: 1.75, delay: Double(delayCounter) * 0.05, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                cell.transform = CGAffineTransform.identity
+                }, completion: nil)
+            delayCounter += 1
+        }
+    }
 }
+
+
 
 // MARK: - Extensions
 extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -86,7 +109,16 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as? LocationTableViewCell else { return UITableViewCell()}
         cell.location = mySavedLocations[indexPath.row]
+        cell.contentView.layer.cornerRadius = 15
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if(indexPath.row % 2 == 0){
+            cell.contentView.layer.backgroundColor = UIColor.white.cgColor
+        } else {
+            cell.contentView.layer.backgroundColor = ColorsHelper.nonPhotoBlue.cgColor
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
