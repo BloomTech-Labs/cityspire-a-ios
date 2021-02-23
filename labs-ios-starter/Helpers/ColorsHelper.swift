@@ -9,14 +9,14 @@
 import UIKit
 
 class ColorsHelper {
-    // MARK: TODO -
-    // Add Colors here
-    
-    
+    static let harvestGold = UIColor(red: 223, green: 151, blue: 53)
+    static let brownSugar = UIColor(red: 167, green: 111, blue: 70)
+    static let sonicSilver = UIColor(red: 117, green: 123, blue: 127)
+    static let lightFrenchBeige = UIColor(red: 210, green: 181, blue: 115)
+    static let nonPhotoBlue = UIColor(red: 164, green: 225, blue: 243)
 }
 
 // MARK: Extension
-// Extension on UIColor in order to give easier color codes
 extension UIColor {
     
    convenience init(red: Int, green: Int, blue: Int) {
