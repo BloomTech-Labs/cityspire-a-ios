@@ -160,26 +160,41 @@
                                 <rect key="frame" x="12" y="376" width="390" height="460"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M8o-Oy-Gzu">
-                                        <rect key="frame" x="0.0" y="0.0" width="213" height="460"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="239.5" height="460"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👨‍👩‍👧‍👦Population:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzO-rN-qPh">
-                                                <rect key="frame" x="0.0" y="0.0" width="213" height="107.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="239.5" height="107.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👮🏽‍♂️Crime Rate:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpS-hY-NgI">
-                                                <rect key="frame" x="0.0" y="117.5" width="213" height="107.5"/>
+                                                <rect key="frame" x="0.0" y="117.5" width="239.5" height="107.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💲Rental Rate:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYY-I6-BdU">
-                                                <rect key="frame" x="0.0" y="235" width="213" height="107.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="fh8-Rb-ijd">
+                                                <rect key="frame" x="0.0" y="235" width="239.5" height="107.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eed-QA-eyi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="107.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="eed-QA-eyi" secondAttribute="height" multiplier="1:1" id="zx2-Ih-UOv"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💲Rental Rate:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYY-I6-BdU">
+                                                        <rect key="frame" x="109.5" y="0.0" width="130" height="107.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="eed-QA-eyi" firstAttribute="height" secondItem="jYY-I6-BdU" secondAttribute="height" id="YOZ-zM-zcr"/>
+                                                </constraints>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZjP-Bs-amA">
                                                 <rect key="frame" x="0.0" y="352.5" width="213" height="107.5"/>
                                                 <subviews>
@@ -205,9 +220,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="zzO-rN-qPh" secondAttribute="trailing" id="4BA-QQ-cqj"/>
                                             <constraint firstItem="zzO-rN-qPh" firstAttribute="leading" secondItem="M8o-Oy-Gzu" secondAttribute="leading" id="5bC-3L-h88"/>
-                                            <constraint firstAttribute="trailing" secondItem="jYY-I6-BdU" secondAttribute="trailing" id="If0-HU-o86"/>
                                             <constraint firstAttribute="trailing" secondItem="qpS-hY-NgI" secondAttribute="trailing" id="P5E-vn-HS6"/>
-                                            <constraint firstItem="jYY-I6-BdU" firstAttribute="leading" secondItem="M8o-Oy-Gzu" secondAttribute="leading" id="WZd-FR-aPY"/>
                                             <constraint firstItem="qpS-hY-NgI" firstAttribute="leading" secondItem="M8o-Oy-Gzu" secondAttribute="leading" id="bQL-kQ-sZQ"/>
                                         </constraints>
                                     </stackView>
