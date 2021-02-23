@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class SelectedLocationDetailViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class SelectedLocationDetailViewController: UIViewController {
     @IBOutlet weak var crimeLabel: UILabel!
     @IBOutlet weak var rentalLabel: UILabel!
     @IBOutlet weak var walkScoreLabel: UILabel!
+    @IBOutlet weak var walkingAnimationView: UIView!
+    @IBOutlet weak var rentalAnimationView: UIView!
     
     // MARK: - Properties
     let locationController = LocationController.shared
@@ -25,6 +28,8 @@ class SelectedLocationDetailViewController: UIViewController {
             updateViews()
         }
     }
+    let walkingAnimation = Animation.named("39992-walking")
+    let rentalAnimation = Animation.named("39992-walking")
     
     // MARK: - Private Methods
     private func updateViews() {
