@@ -8,6 +8,8 @@
 
 import UIKit
 import Lottie
+import MapKit
+import CoreLocation
 
 class SelectedLocationDetailViewController: UIViewController {
     
@@ -19,6 +21,7 @@ class SelectedLocationDetailViewController: UIViewController {
     @IBOutlet weak var walkScoreLabel: UILabel!
     @IBOutlet weak var walkScoreAnimationView: UIView!
     @IBOutlet weak var rentalScoreAnimationView: UIView!
+    @IBOutlet weak var detailMapView: MKMapView!
     
     // MARK: - Properties
     let locationController = LocationController.shared
@@ -34,6 +37,7 @@ class SelectedLocationDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         runAnimations()
+        zoomToLocation(locationName: locationName!)
     }
     
     // MARK: - Private Methods
@@ -72,6 +76,36 @@ class SelectedLocationDetailViewController: UIViewController {
 
         rentalScoreAnimationView.addSubview(animationViewRental)
         animationViewRental.play()
+    }
+    
+    private func zoomToLocation(locationName: String) {
+       
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = locationName
+        
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start { (response, error) in
+            if response == nil{
+                print("Error getting search data")
+            } else {
+                let annotations = self.detailMapView.annotations
+                self.detailMapView.removeAnnotations(annotations)
+                
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                let annotation = MKPointAnnotation()
+                annotation.title = locationName
+                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                self.detailMapView.addAnnotation(annotation)
+                
+                let coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                let region = MKCoordinateRegion(center: coordinate, span: span)
+                self.detailMapView.setRegion(region, animated: true)
+            }
+        }
+
     }
     
     // MARK: - IBActions
