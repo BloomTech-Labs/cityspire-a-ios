@@ -106,11 +106,7 @@ extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let ac = UIAlertController(title: locationName!, message: "What would you like to do?", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Add To Favorites", style: .default, handler: { (_) in
-            //Handle adding to favorites
-        }))
         ac.addAction(UIAlertAction(title: "Details", style: .default, handler: { (_) in
-            //Handle viewing details
             self.performSegue(withIdentifier: "LocationDetailSegue", sender: nil)
         }))
         ac.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: nil))
@@ -120,8 +116,6 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        // Creating Search Request
         guard let text = searchBar.text else { return }
         self.locationName = text
         let searchRequest = MKLocalSearch.Request()
@@ -132,21 +126,17 @@ extension MapViewController: UISearchBarDelegate {
             if response == nil{
                 print("Error getting search data")
             } else {
-                // Remove existing Annotations
                 let annotations = self.mapView.annotations
                 self.mapView.removeAnnotations(annotations)
                 
-                // Getting Data
                 let latitude = response?.boundingRegion.center.latitude
                 let longitude = response?.boundingRegion.center.longitude
                 
-                // Create annotation
                 let annotation = MKPointAnnotation()
                 annotation.title = text
                 annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
                 self.mapView.addAnnotation(annotation)
                 
-                // Zoom in on annotation
                 let coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
                 let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
                 let region = MKCoordinateRegion(center: coordinate, span: span)
